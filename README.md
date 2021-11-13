@@ -1,56 +1,35 @@
-![CodaLab logo](codalab/apps/web/static/img/codalab-logo-fullcolor-positive.png) [![Circle CI](https://circleci.com/gh/codalab/codalab-competitions.svg?style=shield)](https://circleci.com/gh/codalab/codalab-competitions)
+<!--
+ * @Author: Dilision
+ * @Date: 2021-11-13 11:09:58
+ * @Description: 
+-->
 
 
+## 此版本为[codalab](https://github.com/codalab/codalab-competitions)安装国内加速版本
 
-## What is CodaLab?
+**change：**
 
-CodaLab is an open-source web-based platform that enables researchers, developers, and data scientists to collaborate, with the goal of advancing research fields where machine learning and advanced computation is used.  CodaLab helps to solve many common problems in the arena of data-oriented research through its online community where people can share worksheets and participate in competitions.
+- **Dockerfile** `docker容器中实现git,apt-get,pip,npm镜像加速`
+- **install**         `本机实现npm,pip,dockerhub,apt-get,git镜像加速,以及配置Dockerfile加速所需文件sources.list,codalab/requirements/common.txt`
 
-To see Codalab Competition's in action, visit [competitions.codalab.org](https://competitions.codalab.org/).
-
-## Documentation
-
-- [CodaLab Wiki](https://github.com/codalab/codalab/wiki)
-
-## Community
-
-The CodaLab community forum is hosted on Google Groups.
-- [CodaLab Competitions Google Groups Forum](https://groups.google.com/forum/#!forum/codalab-competitions)
-
-
-## Quick installation (for Linux!)
-
-_To participate in competitions, or even organize your own competition, **you don't need to install anything**, you just need to sign in an instance of the platform (e.g. [this one](https://competitions.codalab.org/)). 
-If you wish to configure your own instance of CodaLab competitions, here are the instructions:_
-
-Install docker and add your user to the docker group, if you haven't already
+**tips:**
 
 ```
-$ wget -qO- https://get.docker.com/ | sh
-$ sudo usermod -aG docker $USER
+本机指令:
+python->python2.7
+pip->pip2
 ```
 
-Clone this repo and get the default environment setup
+**quick start:**
+
 ```
-$ git clone https://github.com/codalab/codalab-competitions
-$ cd codalab-competitions
-$ cp .env_sample .env
-$ pip install docker-compose
-$ docker-compose up -d
+#在root用户下运行
+git clone https://github.com/dalision/codalab-competitions
+cd codalab-competitions
+cp .env_sample .env
+pip install docker-compose
+chmod a+x ./install.sh && ./install.sh
+docker-compose up -d
 ```
 
-Now you should be able to access http://localhost/
 
-**More details on how to configure your own instance:**
-- [Configure Codalab from scratch](https://github.com/codalab/codalab-competitions/wiki/Setup-Local-Competitions#user-content-get-the-source-code)
-- [Set up data storage](https://github.com/codalab/codalab-competitions/wiki/Storage)
-
-
-## License
-
-Copyright (c) 2013-2015, The Outercurve Foundation.
-Copyright (c) 2016-2021, Université Paris-Saclay.
-This software is released under the Apache License 2.0 (the "License"); you may not use the software except in compliance with the License.
-
-The text of the Apache License 2.0 can be found online at:
-http://www.opensource.org/licenses/apache2.0.php
