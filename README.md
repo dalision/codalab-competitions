@@ -24,7 +24,7 @@ pip->pip2
 
 ```
 #在root用户下运行
-git clone https://github.com/dalision/codalab-competitions
+git clone https://github.com.cnpmjs.org/dalision/codalab-competitions
 cd codalab-competitions
 cp .env_sample .env
 pip install docker-compose
