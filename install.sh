@@ -23,10 +23,10 @@ fi
 # git
 which git >/dev/null 2>&1
 if [ $? -eq 0 ]; then
-if[ ! -z $git_file ];then
+if [ ! -z $git_file ];then
 git config --global http.sslverify false
 sed -i "s/github.com/github.com.cnpmjs.org/g" $git_file
-if
+fi
 fi
 
 #apt-get
@@ -40,6 +40,7 @@ echo deb $apt_source bionic-security main restricted universe multiverse >> /etc
 echo deb-src $apt_source bionic-security main restricted universe multiverse >> /etc/apt/sources.list
 echo deb $apt_source bionic-proposed main restricted universe multiverse >> /etc/apt/sources.list
 echo deb-src $apt_source bionic-proposed main restricted universe multiverse >> /etc/apt/sources.list
+apt-get update
 #tmp sourcelist
 cp /etc/apt/sources.list ./sources.list
 
